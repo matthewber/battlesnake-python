@@ -40,18 +40,19 @@ def move():
     
     directions = ['up', 'down', 'left', 'right']
     
-    if (count == 0):
-        direction = 'up'
-        count = 1
-    elif (count == 1):
-        direction = 'right'
-        count = 2
-    elif (count == 2):
-        direction = 'down'
-        count = 3
-    elif (count == 3):{
-        direction = 'left'
-        count = 0 }
+    if (health > 30)
+        if (count == 0):
+            direction = 'up'
+            count = 1
+        elif (count == 1):
+            direction = 'right'
+            count = 2
+        elif (count == 2):
+            direction = 'down'
+            count = 3
+        elif (count == 3):
+            direction = 'left'
+            count = 0 
 
     print direction
     return {
