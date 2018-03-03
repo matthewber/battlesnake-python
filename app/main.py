@@ -30,7 +30,7 @@ def start():
 
     return {
         'color': '#00FF00',
-        'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
+        'taunt': 'Tibor is on the dance floor',
         'head_url': head_url,
         'name': 'TiborManRooij'
     }
@@ -47,7 +47,7 @@ def move():
     print direction
     return {
         'move': direction,
-        'taunt': 'battlesnake-python!'
+        'taunt': 'Tibors on the dance floor'
     }
 
 
