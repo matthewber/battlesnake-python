@@ -2,6 +2,7 @@ import bottle
 import os
 import random
 
+global count = 0
 
 @bottle.route('/')
 def static():
@@ -19,7 +20,6 @@ def start():
     game_id = data.get('game_id')
     board_width = data.get('width')
     board_height = data.get('height')
-    global count = 0
     # TODO: Do things with data
 
     return {
