@@ -53,19 +53,19 @@ def move():
 #             direction = 'left'
 #             count = 0 
             
-            closestx=0
-            closesty=0
-            
-        for i in data['food']['data']:
-            headx = data['you']['body']['data'][0]['x']
-            heady = data['you']['body']['data'][0]['y']
-            closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
-            foodx= i['x']
-            foody= i['y']
-            distance=(((foodx-headx)**2)+((foody-heady)**2))**0.5
-            if distance<closestDistance:
-                closestx = foodx
-                closesty = foody
+    closestx=0
+    closesty=0
+
+    for i in data['food']['data']:
+        headx = data['you']['body']['data'][0]['x']
+        heady = data['you']['body']['data'][0]['y']
+        closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
+        foodx= i['x']
+        foody= i['y']
+        distance=(((foodx-headx)**2)+((foody-heady)**2))**0.5
+        if distance<closestDistance:
+            closestx = foodx
+            closesty = foody
                 
                 
         
