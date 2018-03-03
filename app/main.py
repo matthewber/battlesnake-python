@@ -43,7 +43,7 @@ def move():
     # TODO: Do things with data
     
     directions = ['up', 'down', 'left', 'right']
-    direction = right
+    direction = 'right'
     print direction
     return {
         'move': direction,
