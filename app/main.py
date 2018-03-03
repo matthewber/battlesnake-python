@@ -2,7 +2,7 @@ import bottle
 import os
 import random
 
-
+count = 0
 
 @bottle.route('/')
 def static():
@@ -21,16 +21,11 @@ def start():
     board_width = data.get('width')
     board_height = data.get('height')
 
-    head_url = '%s://%s/static/head.png' % (
-        bottle.request.urlparts.scheme,
-        bottle.request.urlparts.netloc
-    )
-
     # TODO: Do things with data
 
     return {
         'color': '#00FF00',
-        'taunt': ' We want to explore Tibor  ',
+        'taunt': ' Tibor > Thor',
         'head_url': 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAdMAAAAJDBlMDJjMjI2LTgyMWItNDc5My1iM2Q4LWQ1NDg2MWQ5YTIwNg.jpg',
         'name': 'TiborManRooij'
     }
@@ -38,12 +33,25 @@ def start():
 
 @bottle.post('/move')
 def move():
+    
     data = bottle.request.json
-
+    
+    if count == 0:
+        direction = 'up'
+        count = count+1
+    elif count == 1:
+        direction = 'right'
+        count = count+1
+    elif count == 2:
+        direction = 'down'
+        count = count+1
+    elif count == 3:
+        direction = 'left'
+        count = 0 
     # TODO: Do things with data
     
     directions = ['up', 'down', 'left', 'right']
-    direction = 'right'
+
     print direction
     return {
         'move': direction,
