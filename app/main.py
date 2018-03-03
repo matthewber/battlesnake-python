@@ -30,7 +30,7 @@ def start():
 
     return {
         'color': '#00FF00',
-        'taunt': '  ',
+        'taunt': ' We want to explore Tibor  ',
         'head_url': 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAdMAAAAJDBlMDJjMjI2LTgyMWItNDc5My1iM2Q4LWQ1NDg2MWQ5YTIwNg.jpg',
         'name': 'TiborManRooij'
     }
