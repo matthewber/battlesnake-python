@@ -25,7 +25,7 @@ def start():
 
     return {
         'color': '#00FF00',
-        'taunt': ' Tibor > Thor',
+        'taunt': '--- Tibor > Thor ---',
         'head_url': 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAdMAAAAJDBlMDJjMjI2LTgyMWItNDc5My1iM2Q4LWQ1NDg2MWQ5YTIwNg.jpg',
         'name': 'TiborManRooij'
     }
@@ -35,22 +35,23 @@ def start():
 def move():
     
     data = bottle.request.json
-    
-    if count == 0:
-        direction = 'up'
-        count = count+1
-    elif count == 1:
-        direction = 'right'
-        count = count+1
-    elif count == 2:
-        direction = 'down'
-        count = count+1
-    elif count == 3:
-        direction = 'left'
-        count = 0 
+   
     # TODO: Do things with data
     
     directions = ['up', 'down', 'left', 'right']
+    
+    if (count == 0):
+        direction = 'up'
+        count = 1
+    elif (count == 1):
+        direction = 'right'
+        count = 2
+    elif (count == 2):
+        direction = 'down'
+        count = 3
+    elif (count == 3):
+        direction = 'left'
+        count = 0 
 
     print direction
     return {
