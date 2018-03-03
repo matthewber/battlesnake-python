@@ -19,7 +19,7 @@ def start():
     game_id = data.get('game_id')
     board_width = data.get('width')
     board_height = data.get('height')
-
+    global count = 0
     # TODO: Do things with data
 
     return {
@@ -32,7 +32,7 @@ def start():
 
 @bottle.post('/move')
 def move():
-    count = 1
+  
     data = bottle.request.json
     # TODO: Do things with data
     
