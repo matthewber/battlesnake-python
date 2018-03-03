@@ -2,7 +2,6 @@ import bottle
 import os
 import random
 
-count = 0
 
 @bottle.route('/')
 def static():
@@ -33,9 +32,8 @@ def start():
 
 @bottle.post('/move')
 def move():
-    
+    count = 1
     data = bottle.request.json
-   
     # TODO: Do things with data
     
     directions = ['up', 'down', 'left', 'right']
