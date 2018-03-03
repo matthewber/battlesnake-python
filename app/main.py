@@ -35,6 +35,7 @@ def move():
   
     data = bottle.request.json
     health = data['you']['health']
+    
     # TODO: Do things with data
     
     directions = ['up', 'down', 'left', 'right']
@@ -48,9 +49,9 @@ def move():
     elif (count == 2):
         direction = 'down'
         count = 3
-    elif (count == 3):
+    elif (count == 3):{
         direction = 'left'
-        count = 0 
+        count = 0 }
 
     print direction
     return {
