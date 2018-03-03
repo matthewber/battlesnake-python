@@ -2,7 +2,6 @@ import bottle
 import os
 import random
 
-global count = 0
 
 @bottle.route('/')
 def static():
@@ -20,6 +19,7 @@ def start():
     game_id = data.get('game_id')
     board_width = data.get('width')
     board_height = data.get('height')
+    global count = 0
     # TODO: Do things with data
 
     return {
@@ -40,23 +40,42 @@ def move():
     
     directions = ['up', 'down', 'left', 'right']
     
-    if (health > 30)
-        if (count == 0):
-            direction = 'up'
-            count = 1
-        elif (count == 1):
-            direction = 'right'
-            count = 2
-        elif (count == 2):
-            direction = 'down'
-            count = 3
-        elif (count == 3):
-            direction = 'left'
-            count = 0 
-
+#    # if (health > 30)
+#     #    if (count == 0):
+#             direction = 'up'
+#             count = 1
+#         elif (count == 1):
+#             direction = 'right'
+#             count = 2
+#         elif (count == 2):
+#             direction = 'down'
+#             count = 3
+#         elif (count == 3):
+#             direction = 'left'
+#             count = 0 
+            
+            closestx=0
+            closesty=0
+            
+        for i in data['food']['data']:
+            headx = data['you']['body']['data'][0]['x']
+            heady = data['you']['body']['data'][0]['y']
+            closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
+            foodx= i['x']
+            foody= i['y']
+            distance=(((foodx-headx)**2)+((foody-heady)**2))**0.5
+            if distance<closestDistance:
+                closestx = foodx
+                closesty = foody
+                
+                
+        
+            
+            
+            
     print direction
     return {
-        'move': direction,
+        'move': 'up',
         'taunt': 'Tibors on the dance floor'
     }
 
