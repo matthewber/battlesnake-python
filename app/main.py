@@ -67,12 +67,6 @@ def move():
             closestx = foodx
             closesty = foody
                 
-                
-        
-            
-            
-            
-    print direction
     return {
         'move': 'up',
         'taunt': 'Tibors on the dance floor'
