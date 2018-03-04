@@ -88,10 +88,10 @@ def move():
                 direction = 'right'
     if (heady-body1y) == 0:
         if (headx-body1x)>0:
-            if direction == 'right':
+            if direction == 'left':
                 direction = 'up'
         else:
-            if direction == 'left':
+            if direction == 'right':
                 direction = 'up'
                 
     return {
