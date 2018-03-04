@@ -55,10 +55,12 @@ def move():
             
     closestx=0
     closesty=0
-
+    headx = data['you']['body']['data'][0]['x']
+    heady = data['you']['body']['data'][0]['y']
+    body1x = data['you']['body']['data'][1]['x']
+    body1y = data['you']['body']['data'][1]['y']
     for i in data['food']['data']:
-        headx = data['you']['body']['data'][0]['x']
-        heady = data['you']['body']['data'][0]['y']
+        
         closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
         foodx= i['x']
         foody= i['y']
@@ -77,6 +79,20 @@ def move():
             direction = 'down'
         elif closesty>heady:
             direction = 'up'
+    if (headx-body1x) == 0:
+        if (heady-body1y)>0:
+            if direction == 'up':
+                direction = 'right'
+        else:
+            if direction == 'down':
+                direction = 'right'
+    if (heady-body1y) == 0:
+        if (headx-body1x)>0:
+            if direction == 'right':
+                direction = 'up'
+        else:
+            if direction == 'left':
+                direction = 'up'
                 
     return {
         'move': direction,
