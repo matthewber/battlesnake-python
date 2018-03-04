@@ -66,9 +66,20 @@ def move():
         if distance<closestDistance:
             closestx = foodx
             closesty = foody
+            
+    if headx!=foodx:       
+        if closestx<headx:
+            direction = 'left'
+        elif closestx>headx:
+            direction = 'right'
+    else:
+        if closesty<heady:
+            direction = 'down'
+        elif closesty>heady:
+            direction = 'up'
                 
     return {
-        'move': 'up',
+        'move': direction,
         'taunt': 'Tibors on the dance floor'
     }
 
