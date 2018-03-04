@@ -118,7 +118,21 @@ def move():
             direction = 'left'
         else:
             direction = 'down'
-                
+    
+    if (headx-body1x) == 0:
+        if (heady-body1y)>0:
+            if direction == 'up':
+                direction = 'right'
+        else:
+            if direction == 'down':
+                direction = 'right'
+    if (heady-body1y) == 0:
+        if (headx-body1x)>0:
+            if direction == 'left':
+                direction = 'up'
+        else:
+            if direction == 'right':
+                direction = 'up'
     return {
         'move': direction,
         'taunt': 'Tibors on the dance floor'
