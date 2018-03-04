@@ -59,26 +59,26 @@ def move():
     heady = data['you']['body']['data'][0]['y']
     body1x = data['you']['body']['data'][1]['x']
     body1y = data['you']['body']['data'][1]['y']
-    for i in data['food']['data']:
+    direction = random.choice(directions)
+#     for i in data['food']['data']:
         
-        closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
-        foodx= i['x']
-        foody= i['y']
-        distance=(((foodx-headx)**2)+((foody-heady)**2))**0.5
-        if distance<closestDistance:
-            closestx = foodx
-            closesty = foody
-            
-    if headx!=foodx:       
-        if closestx<headx:
-            direction = 'left'
-        elif closestx>headx:
-            direction = 'right'
-    else:
-        if closesty<heady:
-            direction = 'down'
-        elif closesty>heady:
-            direction = 'up'
+#         closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
+#         foodx= i['x']
+#         foody= i['y']
+#         distance=(((foodx-headx)**2)+((foody-heady)**2))**0.5
+#         if distance<closestDistance:
+#             closestx = foodx
+#             closesty = foody        
+#     if headx!=foodx:       
+#         if closestx<headx:
+#             direction = 'left'
+#         elif closestx>headx:
+#             direction = 'right'
+#     else:
+#         if closesty<heady:
+#             direction = 'down'
+#         elif closesty>heady:
+#             direction = 'up'
     if (headx-body1x) == 0:
         if (heady-body1y)>0:
             if direction == 'up':
