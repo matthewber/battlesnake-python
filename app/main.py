@@ -94,6 +94,12 @@ def move():
             if direction == 'right':
                 direction = 'up'
                 
+    if (headx==0) or (headx == (data['width']-1)):
+        direction = 'down'
+    if (heady==0) or (heady == (data['height']-1)):
+        direction = 'left'
+        
+                
     return {
         'move': direction,
         'taunt': 'Tibors on the dance floor'
