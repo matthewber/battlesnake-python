@@ -98,7 +98,26 @@ def move():
         direction = 'down'
     if (heady==0) or (heady == (data['height']-1)):
         direction = 'left'
-        
+    if (headx==0) and (heady==0):
+        if (headx-body1x)==0:
+            direction = 'right'
+        else:
+            direction = 'down'
+    if (headx==0) and (heady==data['height']-1):
+        if (headx-body1x)==0:
+            direction = 'right'
+        else:
+            direction = 'up'
+    if (headx==data['width']-1) and (heady==data['height']-1):
+        if (headx-body1x)==0:
+            direction = 'left'
+        else:
+            direction = 'up'
+    if (headx==data['width']-1) and (heady==0):
+        if (headx-body1x)==0:
+            direction = 'left'
+        else:
+            direction = 'down'
                 
     return {
         'move': direction,
