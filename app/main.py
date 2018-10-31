@@ -35,23 +35,10 @@ def move():
     data = bottle.request.json
     health = data['you']['health']
     
-    # TODO: Do things with data
+
     
     directions = ['up', 'down', 'left', 'right']
     
-#    # if (health > 30)
-#     #    if (count == 0):
-#             direction = 'up'
-#             count = 1
-#         elif (count == 1):
-#             direction = 'right'
-#             count = 2
-#         elif (count == 2):
-#             direction = 'down'
-#             count = 3
-#         elif (count == 3):
-#             direction = 'left'
-#             count = 0 
             
     closestx=0
     closesty=0
@@ -60,25 +47,6 @@ def move():
     body1x = data['you']['body']['data'][1]['x']
     body1y = data['you']['body']['data'][1]['y']
     direction = random.choice(directions)
-#     for i in data['food']['data']:
-        
-#         closestDistance = (((closestx-headx)**2)+((closesty-heady)**2))**0.5
-#         foodx= i['x']
-#         foody= i['y']
-#         distance=(((foodx-headx)**2)+((foody-heady)**2))**0.5
-#         if distance<closestDistance:
-#             closestx = foodx
-#             closesty = foody        
-#     if headx!=foodx:       
-#         if closestx<headx:
-#             direction = 'left'
-#         elif closestx>headx:
-#             direction = 'right'
-#     else:
-#         if closesty<heady:
-#             direction = 'down'
-#         elif closesty>heady:
-#             direction = 'up'
     if (headx-body1x) == 0:
         if (heady-body1y)>0:
             if direction == 'up':
